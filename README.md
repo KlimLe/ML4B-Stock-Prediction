@@ -111,17 +111,21 @@ Descriptive Language (no judgement, no discussion in this section -> just show w
 
 ## 5. Discussion
 
-### Limited Access to suitable Data
+Overall, we managed to build two working models and an interactive streamlit-app, to demonstrate our work. Although our work fits with the business case, there were some obstacles and limitations to our results.
+
+#### Limited Access to suitable Data
 We had difficulty obtaining appropriate datasets, and the search was time-consuming, especially due to scaling. To acces live news, we built a web scraper, however it unfortunately failed at paywalls.
 
-### Libraries
+#### Libraries
 When using Streamlit, incompatible versions of the libraries used in the Streamlit environment caused errors.
 
-### Model
+#### Model
 - Automated, repeated retraining of the model was abandoned due to poor data quality.
 - Tuning of hyperparameters failed because of an unsuitable data structure.
+- Our acvanced model shows better performance at the cost of time and storage space.
+- We are experiencing overfitting due to having a small dataset.
 
-### Repositories
+#### Repositories
 The transfer of code from Google Colab to GitHub caused errors, and debugging is still incomplete.
 
 Now its time to discuss your results/ artifacts/ app 
