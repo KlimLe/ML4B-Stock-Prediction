@@ -113,31 +113,26 @@ Descriptive Language (no judgement, no discussion in this section -> just show w
 
 Overall, we managed to build two working models and an interactive streamlit-app, to demonstrate our work. Although our work fits with the business case, there were some obstacles and limitations to our results.
 
-#### Limited Access to suitable Data
+#### 5.1 Limited Access to suitable Data
 We had difficulty obtaining appropriate datasets, and the search was time-consuming, especially due to scaling. To acces live news, we built a web scraper, however it unfortunately failed at paywalls.
 
-#### Libraries
+#### 5.2 Libraries
 When using Streamlit, incompatible versions of the libraries used in the Streamlit environment caused errors.
 
-#### Model
+#### 5.3 Model
 - Automated, repeated retraining of the model was abandoned due to poor data quality.
 - Tuning of hyperparameters failed because of an unsuitable data structure.
 - Our acvanced model shows better performance at the cost of time and storage space.
 - We are experiencing overfitting due to having a small dataset.
 
-#### CPU
+#### 5.4 CPU
 Our advanced model is particularly demanding, which is why we movod our development to Google Colab.
 
-#### Repositories
+#### 5.5 Repositories
 The transfer of code from Google Colab to GitHub caused errors, and debugging is still incomplete.
 
-
-Discuss your work from an ethics perspective:
-Dangers of the application of your work (for example discrimination through ML models)
-Transparency 
-Effects on Climate Change 
-Possible sources  Have a look at the "Automating Society Report";  Have a look at this website and their publications
-Further Research: What could be next steps for other researchers (specific research questions)
+#### 5.6 Ethics
+Ethical assesment should explore whether the use of prediction models could potentially destabilize financial markets. Widespread use among market participants could lead to self-fulfilling prophecies and increased market volatility.
 
 ## 6. Conclusion
 We are happy to introduce two working models which are strongly oriented towards our business case. 
