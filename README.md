@@ -36,16 +36,16 @@ The model is a deep learning-based multi-output regression model designed to pre
 
 #### Features
 
-#### 1. Data Collection and Preprocessing: 
+##### 1. Data Collection and Preprocessing: 
 
  - **Financial News Dataset**: The dataset consists of news articles related to various companies, along with their publication dates. 
  - **Stock Prices and Fundamental Data**: Stock prices and fundamental data (like PE Ratio, EPS, Revenue, and Market Cap) are fetched for specific companies using the yfinance library. 
 
 ##### 2. Text Preprocessing: 
 
-- Tokenization and Lemmatization**: The news articles are preprocessed to remove non-alphabetical characters, convert text to lowercase, remove stop words, and lemmatize the words to their base form. 
+- **Tokenization and Lemmatization**: The news articles are preprocessed to remove non-alphabetical characters, convert text to lowercase, remove stop words, and lemmatize the words to their base form. 
 
- - Sentiment Analysis: The sentiment polarity of each news article is calculated using the TextBlob library. 
+ - **Sentiment Analysis**: The sentiment polarity of each news article is calculated using the TextBlob library. 
 
  - **Text Embeddings**: Each preprocessed news article is converted into a numerical vector (embedding) using a pre-trained BERT model from the transformers library. 
 
