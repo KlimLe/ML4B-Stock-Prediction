@@ -13,7 +13,7 @@ from textblob import TextBlob
 import re
 
 # Load new financial news dataset
-news_data = pd.read_csv('/content/first_200_rows_dataset.csv')  # Replace with your dataset path
+news_data = pd.read_csv('final_dataset.csv')  
 news_data['Date'] = pd.to_datetime(news_data['Date'])
 news_data.rename(columns={'News Article': 'News_Article', 'Date': 'Date'}, inplace=True)
 
@@ -365,4 +365,4 @@ predicted_prices = {ticker: target_scalers[ticker].inverse_transform(predictions
 print(predicted_prices)
 
 # Save the retrained model
-model.save('trained_model.h5')
+model.save('final_model.h5')
