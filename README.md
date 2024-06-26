@@ -132,7 +132,7 @@ When using Streamlit, incompatible versions of the libraries used in the Streaml
 - We are experiencing overfitting due to having a small dataset.
 
 #### 5.4 CPU
-Our advanced model is particularly demanding, which is why we movod our development to Google Colab.
+Our advanced model is particularly demanding, which is why we moved our development to Google Colab.
 
 #### 5.5 Repositories
 The transfer of code from Google Colab to GitHub caused errors, and debugging is still incomplete.
