@@ -90,7 +90,6 @@ The model is a deep learning-based multi-output regression model designed to pre
 
 ### 3.2 Advanced Model
 
-Overview 
 
 We added following other features to the basic model, in order to achieve advanced output:
 
