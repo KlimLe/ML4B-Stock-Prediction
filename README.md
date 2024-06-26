@@ -38,7 +38,7 @@ Describe how you prepare the dataset for your project
 
 #### 3.1 Basic Model
 
-The model is a deep learning-based multi-output regression model designed to predict the future stock prices of multiple companies. It incorporates a range of features, including technical indicators, fundamental data, sentiment analysis, and text embeddings from news articles. Here's a detailed description of the model's components and workflow
+The model is a deep learning-based multi-output regression model designed to predict the future stock prices of multiple companies. It incorporates a range of features, including technical indicators, fundamental data, sentiment analysis, and text embeddings from news articles. Here's a detailed description of the model's components and workflow.
 
 ##### 1. Data Collection and Preprocessing: 
 
