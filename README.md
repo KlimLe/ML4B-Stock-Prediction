@@ -138,7 +138,8 @@ Our advanced model is particularly demanding, which is why we movod our developm
 The transfer of code from Google Colab to GitHub caused errors, and debugging is still incomplete.
 
 #### 5.6 Ethics
-Ethical assesment should explore whether the use of prediction models could potentially destabilize financial markets. Widespread use among market participants could lead to self-fulfilling prophecies and increased market volatility.
+- Ethical assesment should explore whether the use of prediction models could potentially destabilize financial markets. Widespread use among market participants could lead to self-fulfilling prophecies and increased market volatility.
+- Whilst using Deep Learning models there exists the black box problem, which refers to low transparency of decisions of the models and therefore low transparency for the users.
 
 ## 6. Conclusion
 We are happy to introduce two working models which are strongly oriented towards our business case. 
