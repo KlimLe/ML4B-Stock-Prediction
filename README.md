@@ -125,11 +125,13 @@ When using Streamlit, incompatible versions of the libraries used in the Streaml
 - Our acvanced model shows better performance at the cost of time and storage space.
 - We are experiencing overfitting due to having a small dataset.
 
+#### CPU
+Our advanced model is particularly demanding, which is why we movod our development to Google Colab.
+
 #### Repositories
 The transfer of code from Google Colab to GitHub caused errors, and debugging is still incomplete.
 
-Now its time to discuss your results/ artifacts/ app 
-Show the limitations : e.g. missing data, limited training ressources/ GPU availability in Colab, limitaitons of the app
+
 Discuss your work from an ethics perspective:
 Dangers of the application of your work (for example discrimination through ML models)
 Transparency 
