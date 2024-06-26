@@ -45,7 +45,7 @@ The model is a deep learning-based multi-output regression model designed to pre
 
  - **Text Embeddings**: Each preprocessed news article is converted into a numerical vector (embedding) using a pre-trained BERT model from the transformers library. 
 
-#### 3. Technical and Fundamental Data Processing: 
+##### 3. Technical and Fundamental Data Processing: 
 
  - **Technical Indicators**: Technical indicators are computed from the stock price data using the ta library. 
 
