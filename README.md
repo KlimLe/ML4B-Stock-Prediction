@@ -9,20 +9,13 @@ Shu Qiu (es36ydyh/22732779)
 
 Our primary goal is to generate a model to predict the future stock prices of multiple companies using a combination of historical stock prices, technical indicators, fundamental data, and sentiment and embeddings from financial news articles. This multi-faceted approach aims to capture various factors that influence stock prices, providing a more comprehensive and accurate prediction. 
 
-###Business Case
+### Business Case
 Our goal is to enable informed decisions for investors. This requires requires reliable predictions in order to minimize risks and maximize returns.
 
-Challenges:
-
-Complexity and Volatility: Financial markets are highly complex and volatile, making accurate predictions challenging.
-Model Selection and Composition: Choosing and combining the right model components is crucial for accurate forecasts.
-Data Management: Selecting, updating, and processing a robust dataset is essential for model accuracy.
-Solution:
-
-Model Iterations: Utilize continuously improved ML models through iterative development.
-User-Friendly Interface: Design an intuitive interface accessible for users of all experience levels.
-Comprehensive Data Analysis: Integrate multiple data sources to provide holistic insights.
-By addressing these challenges with advanced ML techniques and user-centric design, the app aims to empower investors with reliable forecasts, ultimately enhancing investment decisions and outcomes.
+#### Challenges
+- The Complexity and volatility of financial markets makes accurate predictions challenging.
+- Choosing and combining the right model components is crucial for accurate forecasts.
+- Selecting, updating, and processing a robust dataset is essential for model accuracy.
 
 ## 2. Related Work
 What have others done in your area of work/ to answer similar questions?
