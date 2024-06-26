@@ -11,3 +11,4 @@ transformers==4.41.2
 tf-keras==2.16.0
 plotly==5.22.0
 textblob==0.18.0.post0
+gdown==5.2.0
