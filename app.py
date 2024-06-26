@@ -236,7 +236,7 @@ for ticker, company in companies_to_focus.items():
 # Display news headlines with sentiment in a table
 st.subheader("Latest News")
 news_table = todays_news[['News Article', 'Sentiment']].copy()
-news_table['Sentiment'] = news_table['Sentiment'].apply(lambda x: f" 0 else 'red'}'>{x:.2f}")
+news_table['Sentiment'] = news_table['Sentiment'].apply(lambda x: f"<span style='color:{'green' if x > 0 else 'red'}'>{x:.2f}</span>")
 st.write(news_table.to_html(escape=False, index=False), unsafe_allow_html=True)
 
 # Display stock price charts with actual, predicted prices, and technical indicators
