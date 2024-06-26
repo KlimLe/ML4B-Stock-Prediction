@@ -7,10 +7,11 @@ Shu Qiu (StudOn-Username/Enrollment Number)
 
 ## 1. Motivation
 
+Our primary goal is to generate a model to predict the future stock prices of multiple companies using a combination of historical stock prices, technical indicators, fundamental data, and sentiment and embeddings from financial news articles. This multi-faceted approach aims to capture various factors that influence stock prices, providing a more comprehensive and accurate prediction. 
 
 ## 2. Related Work
-What have others done in your area of work/ to answer similar questions?
-Discussing existing work in the context of your work
+**What have others done in your area of work/ to answer similar questions?**
+**Discussing existing work in the context of your work**
 
 ## 3. Methodology
 
@@ -26,42 +27,13 @@ Describe specialities
 Describe how you prepare the dataset for your project
 
 ### 3.3 Modeling and Evaluation
-Describe the model architecture(s) you selected
 Describe how you train your models
 Describe how you evaluate your models/ which metrics you use
 
-## 4. Results
-Describe what artifacts you have build
-Describe the libraries and tools you use
-Describe the concept of your app
-Describe the results you achieve by applying your trained models on unseen data
-Descriptive Language (no judgement, no discussion in this section -> just show what you built)
-
-## 5. Discussion
-Now its time to discuss your results/ artifacts/ app 
-Show the limitations : e.g. missing data, limited training ressources/ GPU availability in Colab, limitaitons of the app
-Discuss your work from an ethics perspective:
-Dangers of the application of your work (for example discrimination through ML models)
-Transparency 
-Effects on Climate Change 
-Possible sources  Have a look at the "Automating Society Report";  Have a look at this website and their publications
-Further Research: What could be next steps for other researchers (specific research questions)
-
-## 6. Conclusion
-Short summary of your findings and outlook
-
-
-
-
-
-
-
-
-Antonios' notes: 
-
-Model Description 
+### 3.1 Basic Model
 
 The model you've built is a deep learning-based multi-output regression model designed to predict the future stock prices of multiple companies. It incorporates a range of features, including technical indicators, fundamental data, sentiment analysis, and text embeddings from news articles. Here's a detailed description of the model's components and workflow: 
+Describe the model architecture(s) you selected
 
 Components 
 
@@ -121,43 +93,7 @@ Saving the Model:
 
 Model Persistence: The trained model is saved to disk for future use. 
 
-Workflow 
-
-Load and preprocess the news articles to generate sentiment scores and BERT embeddings. 
-
-Fetch and preprocess the stock price data and fundamental data. 
-
-Aggregate the news data on a daily basis and merge it with the stock data. 
-
-Create sequences of data with a defined look-back window and set the future stock price as the target. 
-
-Build the Transformer-based model to handle the sequential nature of the data. 
-
-Train the model on the training set and validate it on the validation set. 
-
-Make predictions on the validation set and transform the predictions back to the original scale. 
-
-Save the trained model for future predictions. 
-
-Goal 
-
-The primary goal of the model is to predict the future stock prices of multiple companies using a combination of historical stock prices, technical indicators, fundamental data, and sentiment and embeddings from financial news articles. This multi-faceted approach aims to capture various factors that influence stock prices, providing a more comprehensive and accurate prediction. 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-Komplexes Modell  
+### 3.2 Advanced Model
 
 Overview 
 
@@ -271,6 +207,22 @@ Summary
 
 This model combines advanced NLP techniques with time series forecasting to predict stock prices based on a comprehensive set of features extracted from news articles and stock data. By leveraging transformer-based neural networks, the model can capture complex dependencies and provide accurate predictions for multiple companies simultaneously. 
 
- 
+## 4. Results
+Describe what artifacts you have build
+Describe the libraries and tools you use
+Describe the concept of your app
+Describe the results you achieve by applying your trained models on unseen data
+Descriptive Language (no judgement, no discussion in this section -> just show what you built)
 
- 
+## 5. Discussion
+Now its time to discuss your results/ artifacts/ app 
+Show the limitations : e.g. missing data, limited training ressources/ GPU availability in Colab, limitaitons of the app
+Discuss your work from an ethics perspective:
+Dangers of the application of your work (for example discrimination through ML models)
+Transparency 
+Effects on Climate Change 
+Possible sources  Have a look at the "Automating Society Report";  Have a look at this website and their publications
+Further Research: What could be next steps for other researchers (specific research questions)
+
+## 6. Conclusion
+Short summary of your findings and outlook
