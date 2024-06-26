@@ -32,16 +32,14 @@ Describe how you evaluate your models/ which metrics you use
 
 ### 3.1 Basic Model
 
-The model is a deep learning-based multi-output regression model designed to predict the future stock prices of multiple companies. It incorporates a range of features, including technical indicators, fundamental data, sentiment analysis, and text embeddings from news articles. Here's a detailed description of the model's components and workflow: 
+The model is a deep learning-based multi-output regression model designed to predict the future stock prices of multiple companies. It incorporates a range of features, including technical indicators, fundamental data, sentiment analysis, and text embeddings from news articles. Here's a detailed description of the model's components and workflow
 
-#### Features
-
-##### 1. Data Collection and Preprocessing: 
+#### 1. Data Collection and Preprocessing: 
 
  - **Financial News Dataset**: The dataset consists of news articles related to various companies, along with their publication dates. 
  - **Stock Prices and Fundamental Data**: Stock prices and fundamental data (like PE Ratio, EPS, Revenue, and Market Cap) are fetched for specific companies using the yfinance library. 
 
-##### 2. Text Preprocessing: 
+#### 2. Text Preprocessing: 
 
 - **Tokenization and Lemmatization**: The news articles are preprocessed to remove non-alphabetical characters, convert text to lowercase, remove stop words, and lemmatize the words to their base form. 
 
@@ -49,25 +47,25 @@ The model is a deep learning-based multi-output regression model designed to pre
 
  - **Text Embeddings**: Each preprocessed news article is converted into a numerical vector (embedding) using a pre-trained BERT model from the transformers library. 
 
-##### 3. Technical and Fundamental Data Processing: 
+#### 3. Technical and Fundamental Data Processing: 
 
  - **Technical Indicators**: Technical indicators are computed from the stock price data using the ta library. 
 
  - **Handling Missing Values**: Missing values in technical indicators and fundamental data are imputed using the KNN imputer. 
 
-##### 4. Data Aggregation and Integration: 
+#### 4. Data Aggregation and Integration: 
 
  - **Aggregate News Data**: The news data is aggregated daily to compute the average sentiment and BERT embeddings. 
 
  - **Merge with Stock Data**: The aggregated news data is merged with the stock price data and fundamental data to create a comprehensive dataset for each company. 
 
-##### 5. Sequence Creation: 
+#### 5. Sequence Creation: 
 
  - **Look-Back Window**: For each company, sequences of data (including stock prices, sentiment scores, text embeddings, technical indicators, and fundamental data) are created using a defined look-back window. This means that for each prediction, the model looks at a sequence of previous days' data. 
 
  - **Future Price as Target**: The future stock price (the price on the next day) is used as the target variable. 
 
-##### 6. Model Architecture: 
+#### 6. Model Architecture: 
 
  - **Input Layer**: The input layer accepts sequences of combined features for each company. 
 
@@ -79,7 +77,7 @@ The model is a deep learning-based multi-output regression model designed to pre
 
  - **Output Layers**: Separate output layers for each company's stock price prediction, each producing a single value (the predicted future price). 
 
-##### 7. Training and Evaluation: 
+#### 7. Training and Evaluation: 
 
  - **Data Splitting**: The data is split into training and validation sets using a time-series split to maintain temporal order. 
 
@@ -87,24 +85,22 @@ The model is a deep learning-based multi-output regression model designed to pre
 
 - **Prediction and Inverse Transformation**: After training, the model makes predictions on the validation set, and these predictions are inverse-transformed to their original scale using the previously fitted scalers. 
 
-##### 8. Saving the Model
+#### 8. Saving the Model
 
 
 ### 3.2 Advanced Model
 
 Overview 
 
-We added 3 other features to the basic model, in order to achieve advanced output.
+We added following other features to the basic model, in order to achieve advanced output:
 
-#### Features
-
-##### 1. Named Entity Recognition (NER):
+#### 1. Named Entity Recognition (NER):
 Named Entity Recognition (NER) is performed using SpaCy to extract entities from the articles. 
 
-##### 2. TF-IDF Vectorization and Topic Modeling: 
+#### 2. TF-IDF Vectorization and Topic Modeling: 
 TF-IDF vectorization is applied to the articles to convert them into numerical vectors representing the importance of each word in the document. 
  
-##### 3. Topic Modelling: 
+#### 3. Topic Modelling: 
 Latent Dirichlet Allocation (LDA) is used for topic modeling to identify the main topics in the articles.
 
 ## 4. Results
