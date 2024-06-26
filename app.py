@@ -13,7 +13,7 @@ import gdown
 
 # Download the model from Google Drive
 url = 'https://drive.google.com/uc?id=1MWn669IPHXC8gzyJk1WY_3BQIldVVKAM'
-output = 'trained_model.h5'
+output = 'final_model.h5'
 gdown.download(url, output, quiet=False)
 
 # Download the dataset from Google Drive
@@ -60,7 +60,7 @@ class TransformerBlock(tf.keras.layers.Layer):
 
 # Load the trained model with the custom layer
 custom_objects = {'TransformerBlock': TransformerBlock}
-model = tf.keras.models.load_model('trained_model.h5', custom_objects=custom_objects)
+model = tf.keras.models.load_model('final_model.h5', custom_objects=custom_objects)
 
 # Function to preprocess text for BERT embeddings
 def preprocess_text(text):
