@@ -1,6 +1,6 @@
 # Stock Prediction App
 
-Antonios Xenidis (StudOn-Username/Enrollment Number)
+Antonios Xenidis (Up13ohij/Enrollment Number)
 Felix Röder (na60puza/23014836)
 Gabriela Lenhart (il14ysuq/21755242) 
 Shu Qiu (es36ydyh/22732779)
@@ -110,6 +110,20 @@ Describe the results you achieve by applying your trained models on unseen data
 Descriptive Language (no judgement, no discussion in this section -> just show what you built)
 
 ## 5. Discussion
+
+### Limited Access to suitable Data
+We had difficulty obtaining appropriate datasets, and the search was time-consuming, especially due to scaling. To acces live news, we built a web scraper, however it unfortunately failed at paywalls.
+
+### Libraries
+When using Streamlit, incompatible versions of the libraries used in the Streamlit environment caused errors.
+
+### Model
+- Automated, repeated retraining of the model was abandoned due to poor data quality.
+- Tuning of hyperparameters failed because of an unsuitable data structure.
+
+### Repositories
+The transfer of code from Google Colab to GitHub caused errors, and debugging is still incomplete.
+
 Now its time to discuss your results/ artifacts/ app 
 Show the limitations : e.g. missing data, limited training ressources/ GPU availability in Colab, limitaitons of the app
 Discuss your work from an ethics perspective:
@@ -120,4 +134,5 @@ Possible sources  Have a look at the "Automating Society Report";  Have a look a
 Further Research: What could be next steps for other researchers (specific research questions)
 
 ## 6. Conclusion
-Short summary of your findings and outlook
+We are happy to introduce two working models which are strongly oriented towards our business case. 
+With the opportunity to obtain more data, there would be a possibility to overcome Overfitting and an overall stronger performance. 
