@@ -12,14 +12,14 @@ from sklearn.preprocessing import StandardScaler
 import gdown
 
 # Download the model from Google Drive
-url = 'https://drive.google.com/uc?id=1TbZ9NSqYTTT3dndNBsGw11GHrKZ2W4zM'
+url = 'https://drive.google.com/uc?id=1MWn669IPHXC8gzyJk1WY_3BQIldVVKAM'
 output = 'trained_model.h5'
 gdown.download(url, output, quiet=False)
 
 # Download the dataset from Google Drive
-dataset_url = 'https://drive.google.com/uc?id=1znZlJdW7WrJGC4DDtDFQ0aPz4k4f44bu'
-dataset_output = 'modified_first_200_rows_dataset.csv'
-gdown.download(dataset_url, dataset_output, quiet=False)
+#dataset_url = 'https://drive.google.com/uc?id=1znZlJdW7WrJGC4DDtDFQ0aPz4k4f44bu'
+#dataset_output = 'modified_first_200_rows_dataset.csv'
+#gdown.download(dataset_url, dataset_output, quiet=False)
 
 # Define the company tickers and names
 companies_to_focus = {
@@ -124,7 +124,7 @@ def fetch_fundamental_data(ticker):
     }
 
 # Load the dataset
-news_data = pd.read_csv('modified_first_200_rows_dataset.csv')
+news_data = pd.read_csv('final_dataset_without_last_column.csv')
 news_data['Date'] = pd.to_datetime(news_data['Date'])
 news_data['Processed_Article'] = news_data['News Article'].apply(preprocess_text)
 news_data['Sentiment'] = news_data['Processed_Article'].apply(get_sentiment)
