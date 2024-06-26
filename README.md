@@ -18,8 +18,7 @@ Our goal is to enable informed decisions for investors. This requires requires r
 - Selecting, updating, and processing a robust dataset is essential for model accuracy.
 
 ## 2. Related Work
-What have others done in your area of work/ to answer similar questions?
-Discussing existing work in the context of your work
+- When searching the internet, you can find many [youtube](https://www.youtube.com/results?search_query=Stock+prediction+machine+learning) videos describing various approaches to this specific goal
 
 ## 3. Methodology
 
