@@ -10,7 +10,7 @@ Shu Qiu (es36ydyh/22732779)
 Our primary goal is to generate a model to predict the future stock prices of multiple companies using a combination of historical stock prices, technical indicators, fundamental data, and sentiment and embeddings from financial news articles. This multi-faceted approach aims to capture various factors that influence stock prices, providing a more comprehensive and accurate prediction. 
 
 ### Business Case
-Our goal is to enable informed decisions for investors. This requires requires reliable predictions in order to minimize risks and maximize returns.
+Our goal is to enable informed decisions for investors. This requires reliable predictions in order to minimize risks and maximize returns.
 
 #### Challenges
 - The Complexity and volatility of financial markets makes accurate predictions challenging.
