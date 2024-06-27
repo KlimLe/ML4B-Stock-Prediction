@@ -281,5 +281,5 @@ for ticker, company in companies_to_focus.items():
 st.subheader("See More")
 st.markdown("""
 We also trained a model that uses Topic Modelling, TF-IDF, and Named Entity Recognition (NER) as features.
-For more details, check out our [GitHub Repository](https://github.com/your-repo-link).
+For more details, check out our [GitHub Repository](https://github.com/KlimLe/ML4B-Stock-Prediction/tree/main).
 """)
