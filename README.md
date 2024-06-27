@@ -18,7 +18,7 @@ Our goal is to enable informed decisions for investors. This requires reliable p
 - Selecting, updating, and processing a robust dataset is essential for model accuracy.
 
 ## 2. Related Work
-The task of predicting stock prices is inherently complex due to the non-linear and dynamic nature of financial markets. To address this challenge, we first conducted an extensive review of various machine learning models to determine the most suitable architecture for our stock price prediction project. Our focus was on evaluating Long Short-Term Memory (LSTM) networks and Transformer architectures, both of which have shown promise in time series forecasting. After a detailed comparative analysis, we decided to utilize the Transformer architecture due to its superior performance.
+We first conducted an extensive review of various machine learning models to determine the most suitable architecture for our stock price prediction project. Our focus was on evaluating Long Short-Term Memory (LSTM) networks and Transformer architectures, both of which have shown promise in time series forecasting. After a detailed comparative analysis, we decided to utilize the Transformer architecture due to its superior performance.
 Transformers, initially introduced by Vaswani et al. (2017) for natural language processing tasks, have recently been adapted for time series prediction due to their ability to handle long-range dependencies more efficiently than RNN-based models. Unlike LSTMs, which process data sequentially, Transformers utilize a self-attention mechanism that allows for parallel processing and better captures relationships in the data.
 
 We started our coding-journey by exploring the internet, searching for approaches to this matter. 
