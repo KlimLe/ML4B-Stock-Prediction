@@ -28,7 +28,7 @@ We started by reviewing the current approaches to predicting stock prices using 
 
 ### 3.2 Data Understanding and Preparation
 https://www.kaggle.com/datasets/leukipp/reddit-finance-data
-We used the dataset included in the link, sorting it by date and using only the headlines associated with Apple, Amazon or Google.
+We used the dataset included in the link, sorted it by date and used only the headlines associated with Apple, Amazon or Google.
 
 ### 3.3 Modeling and Evaluation
 
