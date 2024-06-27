@@ -21,6 +21,11 @@ Our goal is to enable informed decisions for investors. This requires reliable p
 We first conducted an extensive review of various machine learning models to determine the most suitable architecture for our stock price prediction project. Our focus was on evaluating Long Short-Term Memory (LSTM) networks and Transformer architectures, both of which have shown promise in time series forecasting. After a detailed comparative analysis, we decided to utilize the Transformer architecture due to its superior performance.
 Transformers, initially introduced by Vaswani et al. (2017) for natural language processing tasks, have recently been adapted for time series prediction due to their ability to handle long-range dependencies more efficiently than RNN-based models. Unlike LSTMs, which process data sequentially, Transformers utilize a self-attention mechanism that allows for parallel processing and better captures relationships in the data.
 
+Several key papers provided comprehensive insights into the application of Transformers for stock price prediction:
+- Hasan et al. (2023) focused on automated sentiment analysis for web-based stock and cryptocurrency news summarization using Transformer-based models. This study illustrated the effectiveness of models like BERT and XLNET in extracting and leveraging sentiment from financial news for stock price prediction.
+- Daiya and Lin (2021) presented a model for stock movement prediction and portfolio management using multimodal learning with Transformers. This work demonstrated how integrating stock data and news can enhance prediction accuracy, leveraging the strengths of the Transformer architecture.
+- Zhang et al. (2022) developed a Transformer-based attention network for stock movement prediction. The paper provided evidence of the model's ability to process and interpret news headlines and historical stock prices, achieving high prediction accuracy. 
+
 We started our coding-journey by exploring the internet, searching for approaches to this matter. 
 You can find many articles and  [youtube](https://www.youtube.com/results?search_query=Stock+prediction+machine+learning) videos describing various approaches to this specific goal, which we looked through in order to find inspiration on how to address our goal.
 
