@@ -11,6 +11,12 @@ import re
 from sklearn.preprocessing import StandardScaler
 import gdown
 
+# Download the model from Google Drive
+url = 'https://drive.google.com/uc?id=1MWn669IPHXC8gzyJk1WY_3BQIldVVKAM'  # Replace with your file ID
+output = 'trained_model.h5'
+gdown.download(url, output, quiet=False)
+
+
 # Define the company tickers and names
 companies_to_focus = {
     'AMZN': 'Amazon',
