@@ -104,39 +104,32 @@ TF-IDF vectorization is applied to the articles to convert them into numerical v
 ##### 3. Topic Modelling: 
 Latent Dirichlet Allocation (LDA) is used for topic modeling to identify the main topics in the articles.
 
-## 4. Results
-Describe what artifacts you have build
-Describe the libraries and tools you use
-Describe the concept of your app
-Describe the results you achieve by applying your trained models on unseen data
-Descriptive Language (no judgement, no discussion in this section -> just show what you built)
-
-## 5. Discussion
+## 4. Discussion
 
 Overall, we managed to build two working models and an interactive streamlit-app, to demonstrate our work. Although our work fits with the business case, there were some obstacles and limitations to our results.
 
-#### 5.1 Limited Access to suitable Data
+#### 4.1 Limited Access to suitable Data
 We had difficulty obtaining appropriate datasets, and the search was time-consuming, especially due to scaling. To acces live news, we built a web scraper, however it unfortunately failed at paywalls.
 
-#### 5.2 Libraries
+#### 4.2 Libraries
 When using Streamlit, incompatible versions of the libraries used in the Streamlit environment caused errors.
 
-#### 5.3 Model
+#### 4.3 Model
 - Automated, repeated retraining of the model was abandoned due to poor data quality.
 - Tuning of hyperparameters failed because of an unsuitable data structure.
 - Our acvanced model shows better performance at the cost of time and storage space.
 - We are experiencing overfitting due to having a small dataset.
 
-#### 5.4 CPU
+#### 4.4 CPU
 Our advanced model is particularly demanding, which is why we moved our development to Google Colab.
 
-#### 5.5 Repositories
+#### 4.5 Repositories
 The transfer of code from Google Colab to GitHub caused errors, and debugging is still incomplete.
 
-#### 5.6 Ethics
+#### 4.6 Ethics
 - Ethical assesment should explore whether the use of prediction models could potentially destabilize financial markets. Widespread use among market participants could lead to self-fulfilling prophecies and increased market volatility.
 - Whilst using Deep Learning models there exists the black box problem, which refers to low transparency of decisions of the models and therefore low transparency for the users.
 
-## 6. Conclusion
+## 5. Conclusion
 We are happy to introduce two working models which are strongly oriented towards our business case. 
 With the opportunity to obtain more data, there would be a possibility to overcome Overfitting and an overall stronger performance. 
