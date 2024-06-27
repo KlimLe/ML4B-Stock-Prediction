@@ -13,7 +13,7 @@ import gdown
 import os
 
 # Definiere die Datei-ID und die URL
-file_id = '10DyVKt-kT24nSx5VqUx_5ws2-L7A4i7J'
+file_id = '1jb-sKw4SS4NjLyIdVt9m9E008mLVBzJK'
 url = f'https://drive.google.com/uc?export=download&id={file_id}'
 output = 'trained_model.h5'
 
