@@ -11,16 +11,6 @@ import re
 from sklearn.preprocessing import StandardScaler
 import gdown
 
-# Download the model from Google Drive
-url = 'https://drive.google.com/uc?id=1MWn669IPHXC8gzyJk1WY_3BQIldVVKAM'
-output = 'final_model.h5'
-gdown.download(url, output, quiet=False)
-
-# Download the dataset from Google Drive
-#dataset_url = 'https://drive.google.com/uc?id=1znZlJdW7WrJGC4DDtDFQ0aPz4k4f44bu'
-#dataset_output = 'modified_first_200_rows_dataset.csv'
-#gdown.download(dataset_url, dataset_output, quiet=False)
-
 # Define the company tickers and names
 companies_to_focus = {
     'AMZN': 'Amazon',
@@ -60,7 +50,7 @@ class TransformerBlock(tf.keras.layers.Layer):
 
 # Load the trained model with the custom layer
 custom_objects = {'TransformerBlock': TransformerBlock}
-model = tf.keras.models.load_model('final_model.h5', custom_objects=custom_objects)
+model = tf.keras.models.load_model('/content/trained_model.h5', custom_objects=custom_objects)
 
 # Function to preprocess text for BERT embeddings
 def preprocess_text(text):
@@ -124,9 +114,9 @@ def fetch_fundamental_data(ticker):
     }
 
 # Load the dataset
-news_data = pd.read_csv('final_dataset_without_last_column.csv')
+news_data = pd.read_csv('/content/final_dataset_without_last_column.csv')
 news_data['Date'] = pd.to_datetime(news_data['Date'])
-news_data['Processed_Article'] = news_data['News Article'].apply(preprocess_text)
+news_data['Processed_Article'] = news_data['News_Article'].apply(preprocess_text)
 news_data['Sentiment'] = news_data['Processed_Article'].apply(get_sentiment)
 
 # Define dimensions
@@ -194,11 +184,7 @@ start_date = (datetime.today() - timedelta(days=365)).strftime('%Y-%m-%d')
 end_date = today
 
 # Get today's news headlines
-todays_news = news_data[news_data['Date'] == today]
-
-# Define dimensions
-bert_dim = bert_model.config.hidden_size  # typically 768 for BERT models
-combined_dim = 1543  # Update this to the correct combined dimension
+todays_news = news_data[news_data['Date'] == today].head(6)  # Display at most 6 headlines
 
 # Get stock data and predictions
 stock_data_dict = {}
@@ -228,16 +214,30 @@ predictions_dict = {ticker: predictions[ticker] for ticker in companies_to_focus
 st.subheader("Predicted Prices for Tomorrow")
 for ticker, company in companies_to_focus.items():
     today_price = stock_data_dict[ticker]['Close'].values[-1]
-    predicted_price = predictions_dict[ticker][0][0]  # Correct indexing to match prediction structure
+    predicted_price = predictions_dict[ticker][0][0]
     arrow = "⬆️" if predicted_price > today_price else "⬇️"
     color = "green" if predicted_price > today_price else "red"
     st.markdown(f"**{company} ({ticker}):** {predicted_price:.2f} {arrow}", unsafe_allow_html=True)
 
 # Display news headlines with sentiment in a table
 st.subheader("Latest News")
-news_table = todays_news[['News Article', 'Sentiment']].copy()
+news_table = todays_news[['News_Article', 'Sentiment']].copy()
+news_table.columns = ['News Article', 'Sentiment']
 news_table['Sentiment'] = news_table['Sentiment'].apply(lambda x: f"<span style='color:{'green' if x > 0 else 'red'}'>{x:.2f}</span>")
 st.write(news_table.to_html(escape=False, index=False), unsafe_allow_html=True)
+
+# Manual prediction input
+st.subheader("Manual Prediction Input")
+manual_news_headlines = st.text_area("Enter News Headlines", "").split('\n')
+
+if st.button("Predict Manually"):
+    if manual_news_headlines:
+        manual_predictions = predict_prices(manual_news_headlines, look_back, bert_dim, combined_dim, scaler, target_scalers)
+        for ticker, company in companies_to_focus.items():
+            manual_prediction = manual_predictions[ticker][0][0]
+            today_price = stock_data_dict[ticker]['Close'].values[-1]
+            arrow = "⬆️" if manual_prediction > today_price else "⬇️"
+            st.write(f"Predicted price for {company} ({ticker}): {manual_prediction:.2f} {arrow}")
 
 # Display stock price charts with actual, predicted prices, and technical indicators
 for ticker, company in companies_to_focus.items():
@@ -276,17 +276,6 @@ for ticker, company in companies_to_focus.items():
     - **Revenue**: {fundamentals['Revenue']}
     - **Market Cap**: {fundamentals['Market_Cap']}
     """)
-
-# Manual prediction input
-st.subheader("Manual Prediction Input")
-manual_news_headlines = st.text_area("Enter News Headlines", "").split('\n')
-
-if st.button("Predict Manually"):
-    if manual_news_headlines:
-        manual_predictions = predict_prices(manual_news_headlines, look_back_window, bert_dim, combined_dim, scaler, target_scalers)
-        for ticker, company in companies_to_focus.items():
-            manual_prediction = manual_predictions[ticker][0][0]
-            st.write(f"Predicted price for {company} ({ticker}): {manual_prediction:.2f}")
 
 # "See More" Section
 st.subheader("See More")
