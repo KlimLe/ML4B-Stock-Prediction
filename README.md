@@ -131,8 +131,15 @@ When using Streamlit, incompatible versions of the libraries used in the Streaml
 #### 4.4 CPU
 Our advanced model is particularly demanding, which is why we moved our development to Google Colab.
 
-#### 4.5 Repositories
-The transfer of code from Google Colab to GitHub caused errors, and debugging is still incomplete.
+#### 4.5 Repositories and Streamlit
+The transfer of code from Google Colab to GitHub caused errors, and debugging was successful to the point where we were able to run the Streamlit app. However, the running app terminates due to a lack of RAM in its environment.
+
+We tried the following measures:
+- We added an instruction to prevent the model from being downloaded more than once, as this issue occurred previously.
+- Given that BERT embeddings are memory-intensive, we implemented caching to avoid unnecessary multiple generations of these embeddings.
+
+Unfortunately, these measures did not resolve the issue, likely because the RoBERTa model requires significant memory. As an alternative, we made our app available on Hugging Face, with the trade-off being that the visual presentation cannot match the appearance on Streamlit.
+
 
 #### 4.6 Ethics
 - Ethical assesment should explore whether the use of prediction models could potentially destabilize financial markets. Widespread use among market participants could lead to self-fulfilling prophecies and increased market volatility.
