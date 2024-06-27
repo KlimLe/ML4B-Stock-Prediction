@@ -24,9 +24,7 @@ You can find many articles and  [youtube](https://www.youtube.com/results?search
 ## 3. Methodology
 
 ### 3.1 General Methodology
-How did you proceed to achieve your project goals? 
-Describe which steps you have undertaken
-Aim: Others should understand your research process
+We started by reviewing the current approaches to predicting stock prices using machine learning algorithms, with the aim of establishing a basic framework. The next step was to find suitable datasets that we could use to train the model and find a way to continuously update the data. The following steps consisted mainly of continuously improving the current model to make it more powerful and thus produce better predictions. 
 
 ### 3.2 Data Understanding and Preparation
 Introduce the dataset to the reader
