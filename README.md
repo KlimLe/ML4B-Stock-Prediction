@@ -27,10 +27,8 @@ You can find many articles and  [youtube](https://www.youtube.com/results?search
 We started by reviewing the current approaches to predicting stock prices using machine learning algorithms, with the aim of establishing a basic framework. The next step was to find suitable datasets that we could use to train the model and find a way to continuously update the data. The following steps consisted mainly of continuously improving the current model to make it more powerful and thus produce better predictions. 
 
 ### 3.2 Data Understanding and Preparation
-Introduce the dataset to the reader
-Describe structure and size of your dataset
-Describe specialities
-Describe how you prepare the dataset for your project
+https://www.kaggle.com/datasets/leukipp/reddit-finance-data
+We used the dataset included in the link, sorting it by date and using only the headlines associated with Apple, Amazon or Google.
 
 ### 3.3 Modeling and Evaluation
 
