@@ -12,7 +12,8 @@ from sklearn.preprocessing import StandardScaler
 import gdown
 
 # Download the model from Google Drive
-url = 'https://drive.google.com/file/d/1L69so1We0E67X0bRHSOkEsvPYeSIEnr6'
+file_id = '1L69so1We0E67X0bRHSOkEsvPYeSIEnr6'
+url = f'https://drive.google.com/uc?export=download&id={file_id}'
 output = 'trained_model.h5'
 gdown.download(url, output, quiet=False)
 
