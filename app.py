@@ -12,7 +12,6 @@ from sklearn.preprocessing import StandardScaler
 import gdown
 import os
 
-
 # Definiere die Datei-ID und die URL
 file_id = '1iGO6l1e6zgGFKRVmwHkxNn4f0kuNBAF6'
 url = f'https://drive.google.com/uc?export=download&id={file_id}'
@@ -24,12 +23,6 @@ if not os.path.exists(output):
     gdown.download(url, output, quiet=False)
 else:
     print(f'{output} already exists, skipping download.')
-    
-# Download the model from Google Drive
-#file_id = '1iGO6l1e6zgGFKRVmwHkxNn4f0kuNBAF6'
-#url = f'https://drive.google.com/uc?export=download&id={file_id}'
-#output = 'trained_model.h5'
-#gdown.download(url, output, quiet=False)
 
 # Define the company tickers and names
 companies_to_focus = {
@@ -206,34 +199,18 @@ end_date = today
 # Get today's news headlines
 todays_news = news_data[news_data['Date'] == today].head(6)  # Display at most 6 headlines
 
-# Get stock data and predictions
-stock_data_dict = {}
-fundamental_data_dict = {}
-for ticker in companies_to_focus:
-    stock_data = yf.download(ticker, start=start_date, end=end_date)
+# Precompute BERT embeddings for today's headlines
+todays_headlines = todays_news['Processed_Article'].tolist()
+todays_bert_embeddings = [get_bert_embeddings([article], tokenizer, bert_model)[0] for article in todays_headlines]
 
-    # Ensure the Date column is present
-    stock_data.reset_index(inplace=True)
-
-    # Fetch moving averages
-    ma50 = stock_data['Close'].rolling(window=50).mean()
-    ma200 = stock_data['Close'].rolling(window=200).mean()
-
-    stock_data['MA50'] = ma50
-    stock_data['MA200'] = ma200
-
-    stock_data_dict[ticker] = stock_data
-    fundamental_data_dict[ticker] = fetch_fundamental_data(ticker)
-
-# Call predict_prices once
-news_headlines = todays_news['Processed_Article'].tolist()
-predictions = predict_prices(news_headlines, look_back, bert_dim, combined_dim, scaler, target_scalers)
+# Predict stock prices based on today's headlines
+predictions = predict_prices(todays_headlines, look_back, bert_dim, combined_dim, scaler, target_scalers)
 predictions_dict = {ticker: predictions[ticker] for ticker in companies_to_focus}
 
 # Display predicted prices for tomorrow
 st.subheader("Predicted Prices for Tomorrow")
 for ticker, company in companies_to_focus.items():
-    today_price = stock_data_dict[ticker]['Close'].values[-1]
+    today_price = yf.download(ticker, start=start_date, end=end_date)['Close'].values[-1]
     predicted_price = predictions_dict[ticker][0][0]
     arrow = "⬆️" if predicted_price > today_price else "⬇️"
     color = "green" if predicted_price > today_price else "red"
@@ -255,13 +232,24 @@ if st.button("Predict Manually"):
         manual_predictions = predict_prices(manual_news_headlines, look_back, bert_dim, combined_dim, scaler, target_scalers)
         for ticker, company in companies_to_focus.items():
             manual_prediction = manual_predictions[ticker][0][0]
-            today_price = stock_data_dict[ticker]['Close'].values[-1]
+            today_price = yf.download(ticker, start=start_date, end=end_date)['Close'].values[-1]
             arrow = "⬆️" if manual_prediction > today_price else "⬇️"
             st.write(f"Predicted price for {company} ({ticker}): {manual_prediction:.2f} {arrow}")
 
 # Display stock price charts with actual, predicted prices, and technical indicators
 for ticker, company in companies_to_focus.items():
-    stock_data = stock_data_dict[ticker]
+    stock_data = yf.download(ticker, start=start_date, end=end_date)
+
+    # Ensure the Date column is present
+    stock_data.reset_index(inplace=True)
+
+    # Fetch moving averages
+    ma50 = stock_data['Close'].rolling(window=50).mean()
+    ma200 = stock_data['Close'].rolling(window=200).mean()
+
+    stock_data['MA50'] = ma50
+    stock_data['MA200'] = ma200
+
     fig = go.Figure()
 
     # Add actual stock price trace
@@ -286,16 +274,6 @@ for ticker, company in companies_to_focus.items():
 
     # Display the chart
     st.plotly_chart(fig)
-
-    # Display fundamental data
-    st.subheader(f"{company} ({ticker}) Fundamentals")
-    fundamentals = fundamental_data_dict[ticker]
-    st.markdown(f"""
-    - **PE Ratio**: {fundamentals['PE_Ratio']}
-    - **EPS**: {fundamentals['EPS']}
-    - **Revenue**: {fundamentals['Revenue']}
-    - **Market Cap**: {fundamentals['Market_Cap']}
-    """)
 
 # "See More" Section
 st.subheader("See More")
