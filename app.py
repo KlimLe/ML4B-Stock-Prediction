@@ -56,7 +56,7 @@ class TransformerBlock(tf.keras.layers.Layer):
 
 # Load the trained model with the custom layer
 custom_objects = {'TransformerBlock': TransformerBlock}
-model = tf.keras.models.load_model('/content/trained_model.h5', custom_objects=custom_objects)
+model = tf.keras.models.load_model('trained_model.h5', custom_objects=custom_objects)
 
 # Function to preprocess text for BERT embeddings
 def preprocess_text(text):
@@ -120,7 +120,7 @@ def fetch_fundamental_data(ticker):
     }
 
 # Load the dataset
-news_data = pd.read_csv('/content/final_dataset_without_last_column.csv')
+news_data = pd.read_csv('final_dataset_without_last_column.csv')
 news_data['Date'] = pd.to_datetime(news_data['Date'])
 news_data['Processed_Article'] = news_data['News_Article'].apply(preprocess_text)
 news_data['Sentiment'] = news_data['Processed_Article'].apply(get_sentiment)
