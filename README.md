@@ -132,25 +132,22 @@ When using Streamlit, incompatible versions of the libraries used in the Streaml
 Our advanced model is particularly demanding, which is why we moved our development to Google Colab.
 
 #### 4.5 Repositories and Streamlit
-The transfer of code from Google Colab to GitHub caused errors, and debugging was successful to the point where we were able to run the Streamlit app. However, the running app terminates due to a lack of RAM in its environment.
-
-We tried the following measures:
-- We added an instruction to prevent the model from being downloaded more than once, as this issue occurred previously.
-- Given that BERT embeddings are memory-intensive, we implemented caching to avoid unnecessary multiple generations of these embeddings.
-
-Unfortunately, these measures did not resolve the issue, likely because the RoBERTa model requires significant memory. As an alternative, we made our app available on Hugging Face, with the trade-off being that the visual presentation cannot match the appearance on Streamlit.
-
 The Colab file contains two cells. The first cell creates a streamlit app using the %%writefile app.py command. To deploy the app, follow these steps:
 - Run the first cell to write the Streamlit app code to app.py.
-Run the second cell to start the deployment process. This cell ensures that all tunnels are properly set up.
-
-Important Note:
-We use this approach due to the limited capacity of Streamlit Cloud, which can sometimes lead to instability. By utilizing Colab, we can ensure a higher level of stability for running our Streamlit app.
+- Run the second cell to start the deployment process. This cell ensures that all tunnels are properly set up.
 
 If you encounter any issues, such as connection errors or other types of errors, follow these steps:
 - Rerun the second cell. This will kill any existing tunnels and attempt to re-establish a new connection.
 - If the problem persists, rerun the second cell again until the connection stabilizes and the app runs smoothly.
 
+Important Note:
+By utilizing Colab, we can ensure a higher level of stability for running our Streamlit app. The transfer of code from Google Colab to GitHub caused errors, and debugging was successful to the point where we were able to run the Streamlit app. However, the running app terminates due to a lack of RAM in its environment.
+
+We tried the following measures:
+- We added an instruction to prevent the model from being downloaded more than once, as this issue occurred previously.
+- Given that BERT embeddings are memory-intensive, we implemented caching to avoid unnecessary multiple generations of these embeddings.
+
+Unfortunately, these measures did not resolve the issue, likely because the RoBERTa model requires significant memory.
 
 #### 4.6 Ethics
 - Ethical assesment should explore whether the use of prediction models could potentially destabilize financial markets. Widespread use among market participants could lead to self-fulfilling prophecies and increased market volatility.
@@ -161,4 +158,4 @@ We are happy to introduce two working models which are strongly oriented towards
 With the opportunity to obtain more data, there would be a possibility to overcome Overfitting and an overall stronger performance. 
 
 
-##### Appendix 
+
