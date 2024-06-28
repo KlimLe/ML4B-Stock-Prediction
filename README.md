@@ -163,6 +163,7 @@ With the opportunity to obtain more data, there would be a possibility to overco
 - app.py: The Code for our Streamlit-App with changes regarding the mentioned RAM-issue (see 4.5)
 - final_dataset.csv: Our Training-Dataset
 - final_dataset_without_last_column.csv: Our Prediction-Dataset
+- WebScraper.py: Our WebScraper
   
 
 ### Colab-manual
