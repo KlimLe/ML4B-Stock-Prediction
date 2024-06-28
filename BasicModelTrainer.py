@@ -53,7 +53,7 @@ def get_sentiment(text):
 
 news_data["Sentiment"] = news_data["Processed_Article"].apply(get_sentiment)
 
-# Initialize BERT tokenizer and model (You can also use RoBERTa or other advanced models)
+# Initialize RoBERTa tokenizer and model
 tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
 bert_model = TFRobertaModel.from_pretrained('roberta-base')
 
