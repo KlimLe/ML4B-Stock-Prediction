@@ -1,5 +1,3 @@
-pip install requests beautifulsoup4 gdelt pandas
-
 import requests
 import json
 from bs4 import BeautifulSoup
