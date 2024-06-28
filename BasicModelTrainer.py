@@ -363,3 +363,5 @@ predicted_prices = {ticker: target_scalers[ticker].inverse_transform(predictions
 
 # Display the predicted prices in the original scale
 print(predicted_prices)
+
+model.save('trained_model.h5')
