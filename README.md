@@ -136,7 +136,7 @@ When using Streamlit, incompatible versions of the libraries used in the Streaml
 Our advanced model is particularly demanding, which is why we moved our development to Google Colab.
 
 #### 4.5 Repositories and Streamlit
-The Colab file contains two cells. The first cell creates a streamlit app using the %%writefile app.py command. To deploy the app, follow these steps:
+The [Colab](https://colab.research.google.com/drive/1RuMt7uQ2BwEWOlnZvlww__XibIseMW1H?usp=sharing#scrollTo=gZnpZkIy1UPy) file contains two cells. The first cell creates a streamlit app using the %%writefile app.py command. To deploy the app, follow these steps:
 - Run the first cell to write the Streamlit app code to app.py.
 - Run the second cell to start the deployment process. This cell ensures that all tunnels are properly set up. After running this cell, click the HTTPS link that appears to access your Streamlit app.
 
@@ -144,7 +144,7 @@ If you encounter any issues, such as connection errors or other types of errors,
 - Rerun the second cell. This will kill any existing tunnels and attempt to re-establish a new connection.
 - If the problem persists, rerun the second cell again until the connection stabilizes and the app runs smoothly.
 
-Important Note:
+<u> Important Note: </u>
 
 By utilizing Colab, we can ensure a higher level of stability for running our Streamlit app. The transfer of code from Google Colab to GitHub caused errors, and debugging was successful to the point where we were able to run the Streamlit app. However, Streamlit Cloud terminates the running app due to a lack of RAM in its environment.
 
@@ -163,4 +163,12 @@ We are happy to introduce two working models which are strongly oriented towards
 With the opportunity to obtain more data, there would be a possibility to overcome Overfitting and an overall stronger performance. 
 
 
+
+#### 6. Repository Description
+- AdvancedModel.ipynb: This shows our colab-code, which we used to train our advanced model
+- BasicModel.ipynb: This shows our colab-code, which we used to train our basic model, saving it, and deploying the streamlit-app via pygrok
+- BasicModelTrainer.py: The code for training our basic model
+- app.py: The Code sor our Streamlit-App with changes regarding the mentioned RAM-issue (see 4.5 - Important Note)
+- final_dataset.csv: Our Training-Dataset
+- final_dataset_without_last_column.csv: Our Prediction-Dataset
 
