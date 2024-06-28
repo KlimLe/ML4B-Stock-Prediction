@@ -17,7 +17,7 @@ file_id = '1iGO6l1e6zgGFKRVmwHkxNn4f0kuNBAF6'
 url = f'https://drive.google.com/uc?export=download&id={file_id}'
 output = 'trained_model.h5'
 
-# Überprüfe, ob die Datei bereits existiert
+# Test if model already exists and if not, download
 if not os.path.exists(output):
     print(f'Downloading {output}...')
     gdown.download(url, output, quiet=False)
