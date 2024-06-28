@@ -16,3 +16,6 @@ spacy
 nltk
 ta 
 textblob
+requests 
+beautifulsoup4 
+gdelt
