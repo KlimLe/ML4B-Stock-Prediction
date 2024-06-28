@@ -138,13 +138,14 @@ Our advanced model is particularly demanding, which is why we moved our developm
 #### 4.5 Repositories and Streamlit
 The Colab file contains two cells. The first cell creates a streamlit app using the %%writefile app.py command. To deploy the app, follow these steps:
 - Run the first cell to write the Streamlit app code to app.py.
-- Run the second cell to start the deployment process. This cell ensures that all tunnels are properly set up.
+- Run the second cell to start the deployment process. This cell ensures that all tunnels are properly set up. After running this cell, click the HTTPS link that appears to access your Streamlit app.
 
 If you encounter any issues, such as connection errors or other types of errors, follow these steps:
 - Rerun the second cell. This will kill any existing tunnels and attempt to re-establish a new connection.
 - If the problem persists, rerun the second cell again until the connection stabilizes and the app runs smoothly.
 
 Important Note:
+
 By utilizing Colab, we can ensure a higher level of stability for running our Streamlit app. The transfer of code from Google Colab to GitHub caused errors, and debugging was successful to the point where we were able to run the Streamlit app. However, the limited capacity of Streamlit Cloud terminates the running app due to a lack of RAM in its environment.
 
 We tried the following measures:
