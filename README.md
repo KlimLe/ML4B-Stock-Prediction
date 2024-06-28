@@ -144,6 +144,8 @@ We tried the following measures:
 
 Unfortunately, these measures did not resolve the issue, likely because the RoBERTa model requires significant memory.
 
+However, to be able to present our Streamlit-App, we prepared a colab-file and a manual. (See 6.)
+
 #### 4.6 Ethics
 - Ethical assesment should explore whether the use of prediction models could potentially destabilize financial markets. Widespread use among market participants could lead to self-fulfilling prophecies and increased market volatility.
 - Whilst using Deep Learning models there exists the black box problem, which refers to low transparency of decisions of the models and therefore low transparency for the users.
