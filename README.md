@@ -140,6 +140,17 @@ We tried the following measures:
 
 Unfortunately, these measures did not resolve the issue, likely because the RoBERTa model requires significant memory. As an alternative, we made our app available on Hugging Face, with the trade-off being that the visual presentation cannot match the appearance on Streamlit.
 
+The Colab file contains two cells. The first cell creates a streamlit app using the %%writefile app.py command. To deploy the app, follow these steps:
+- Run the first cell to write the Streamlit app code to app.py.
+Run the second cell to start the deployment process. This cell ensures that all tunnels are properly set up.
+
+Important Note:
+We use this approach due to the limited capacity of Streamlit Cloud, which can sometimes lead to instability. By utilizing Colab, we can ensure a higher level of stability for running our Streamlit app.
+
+If you encounter any issues, such as connection errors or other types of errors, follow these steps:
+- Rerun the second cell. This will kill any existing tunnels and attempt to re-establish a new connection.
+- If the problem persists, rerun the second cell again until the connection stabilizes and the app runs smoothly.
+
 
 #### 4.6 Ethics
 - Ethical assesment should explore whether the use of prediction models could potentially destabilize financial markets. Widespread use among market participants could lead to self-fulfilling prophecies and increased market volatility.
@@ -149,14 +160,5 @@ Unfortunately, these measures did not resolve the issue, likely because the RoBE
 We are happy to introduce two working models which are strongly oriented towards our business case. 
 With the opportunity to obtain more data, there would be a possibility to overcome Overfitting and an overall stronger performance. 
 
+
 ##### Appendix 
-The Colab file contains two cells. The first cell creates a streamlit app using the %%writefile app.py command. To deploy the app, follow these steps:
-- Run the first cell to write the Streamlit app code to app.py.
-Run the second cell to start the deployment process. This cell ensures that all tunnels are properly set up.
-
-#### Important Note:
-We use this approach due to the limited capacity of Streamlit Cloud, which can sometimes lead to instability. By utilizing Colab, we can ensure a higher level of stability for running our Streamlit app.
-
-If you encounter any issues, such as connection errors or other types of errors, follow these steps:
-- Rerun the second cell. This will kill any existing tunnels and attempt to re-establish a new connection.
-- If the problem persists, rerun the second cell again until the connection stabilizes and the app runs smoothly.
