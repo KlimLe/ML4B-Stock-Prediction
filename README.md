@@ -6,8 +6,12 @@ Gabriela Lenhart (il14ysuq/21755242)
 Shu Qiu (es36ydyh/22732779)  
 
 ## 1. Motivation
-
+Welcome to the Stock Prediction with BERT Embeddings project!
 Our primary goal is to generate a model to predict the future stock prices of multiple companies using a combination of historical stock prices, technical indicators, fundamental data, and sentiment and embeddings from financial news articles. This multi-faceted approach aims to capture various factors that influence stock prices, providing a more comprehensive and accurate prediction. 
+
+Traditional sentiment analysis for stock prediction often only relies on simplistic sentiment scores derived from news headlines or social media posts. While these methods provide a rudimentary gauge of market sentiment, they lack the depth and contextual understanding needed for precise predictions.
+
+Our approach leverages the power of Bidirectional Encoder Representations from Transformers (BERT) to process and understand the nuances of financial news and its impact on stock movements. By training our model on historical data, including how stock prices have reacted to news in the past, we can identify complex patterns and relationships that are often missed by traditional sentiment analysis.
 
 ### Business Case
 Our goal is to enable informed decisions for investors. This requires reliable predictions in order to minimize risks and maximize returns.
