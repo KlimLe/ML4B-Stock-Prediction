@@ -160,6 +160,7 @@ With the opportunity to obtain more data, there would be a possibility to overco
 - AdvancedModel.ipynb: This shows our colab-code, which we used to train our advanced model
 - BasicModel.ipynb: This shows our colab-code, which we used to train our basic model, saving it, and deploying the streamlit-app via pygrok
 - BasicModelTrainer.py: The code for training our basic model
+- AdvancedModelTrainer.py: The code for training our advanced model
 - app.py: The Code sor our Streamlit-App with changes regarding the mentioned RAM-issue (see 4.5)
 - final_dataset.csv: Our Training-Dataset
 - final_dataset_without_last_column.csv: Our Prediction-Dataset
