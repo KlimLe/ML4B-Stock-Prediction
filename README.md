@@ -149,10 +149,14 @@ Unfortunately, these measures did not resolve the issue, likely because the RoBE
 We are happy to introduce two working models which are strongly oriented towards our business case. 
 With the opportunity to obtain more data, there would be a possibility to overcome Overfitting and an overall stronger performance. 
 
-#### Appendix 
-Your Colab file contains two cells. The first cell creates a streamlit app using the %%writefile app.py command. To deploy the app, follow these steps:
+##### Appendix 
+The Colab file contains two cells. The first cell creates a streamlit app using the %%writefile app.py command. To deploy the app, follow these steps:
 - Run the first cell to write the Streamlit app code to app.py.
 Run the second cell to start the deployment process. This cell ensures that all tunnels are properly set up.
+
+#### Important Note:
+We use this approach due to the limited capacity of Streamlit Cloud, which can sometimes lead to instability. By utilizing Colab, we can ensure a higher level of stability for running our Streamlit app.
+
 If you encounter any issues, such as connection errors or other types of errors, follow these steps:
 - Rerun the second cell. This will kill any existing tunnels and attempt to re-establish a new connection.
 - If the problem persists, rerun the second cell again until the connection stabilizes and the app runs smoothly.
