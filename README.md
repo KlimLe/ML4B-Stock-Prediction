@@ -150,13 +150,13 @@ However, to be able to present our Streamlit-App, we prepared a colab-file and a
 - Ethical assesment should explore whether the use of prediction models could potentially destabilize financial markets. Widespread use among market participants could lead to self-fulfilling prophecies and increased market volatility.
 - Whilst using Deep Learning models there exists the black box problem, which refers to low transparency of decisions of the models and therefore low transparency for the users.
 
-#### 5. Conclusion
+## 5. Conclusion
 We are happy to introduce two working models which are strongly oriented towards our business case. 
 With the opportunity to obtain more data, there would be a possibility to overcome Overfitting and an overall stronger performance. 
 
 
 
-#### 6. Repository Description and Colab-manual
+## 6. Repository Description and Colab-manual
 - AdvancedModel.ipynb: This shows our colab-code, which we used to train our advanced model
 - BasicModel.ipynb: This shows our colab-code, which we used to train our basic model, saving it, and deploying the streamlit-app via pygrok
 - BasicModelTrainer.py: The code for training our basic model
@@ -164,7 +164,7 @@ With the opportunity to obtain more data, there would be a possibility to overco
 - final_dataset.csv: Our Training-Dataset
 - final_dataset_without_last_column.csv: Our Prediction-Dataset
 
-##### Colab-manual
+### Colab-manual
 The [Colab](hier den Link rein) file contains two cells. The first cell creates a streamlit app using the %%writefile app.py command. To deploy the app, follow these steps:
 - Run the first cell to write the Streamlit app code to app.py.
 - Run the second cell to start the deployment process. This cell ensures that all tunnels are properly set up. After running this cell, click the HTTPS link that appears to access your Streamlit app.
