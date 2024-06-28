@@ -167,7 +167,7 @@ With the opportunity to obtain more data, there would be a possibility to overco
   
 
 ### Colab-manual
-The [Colab](hier den Link rein) file contains two cells. The first cell creates a streamlit app using the %%writefile app.py command. To deploy the app, follow these steps:
+The [https://colab.research.google.com/drive/1tWe3-ttLCqmtqMTxYmETmppL8rc_okQD?usp=sharing] file contains two cells. The first cell creates a streamlit app using the %%writefile app.py command. To deploy the app, follow these steps:
 - Run the first cell to write the Streamlit app code to app.py.
 - Run the second cell to start the deployment process. This cell ensures that all tunnels are properly set up. After running this cell, click the HTTPS link that appears to access your Streamlit app.
 
