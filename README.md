@@ -141,7 +141,7 @@ If you encounter any issues, such as connection errors or other types of errors,
 - If the problem persists, rerun the second cell again until the connection stabilizes and the app runs smoothly.
 
 Important Note:
-By utilizing Colab, we can ensure a higher level of stability for running our Streamlit app. The transfer of code from Google Colab to GitHub caused errors, and debugging was successful to the point where we were able to run the Streamlit app. However, the running app terminates due to a lack of RAM in its environment.
+By utilizing Colab, we can ensure a higher level of stability for running our Streamlit app. The transfer of code from Google Colab to GitHub caused errors, and debugging was successful to the point where we were able to run the Streamlit app. However, due to the limited capacity of Streamlit Cloud the running app terminates due to a lack of RAM in its environment.
 
 We tried the following measures:
 - We added an instruction to prevent the model from being downloaded more than once, as this issue occurred previously.
