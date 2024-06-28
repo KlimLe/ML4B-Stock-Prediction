@@ -145,6 +145,14 @@ Unfortunately, these measures did not resolve the issue, likely because the RoBE
 - Ethical assesment should explore whether the use of prediction models could potentially destabilize financial markets. Widespread use among market participants could lead to self-fulfilling prophecies and increased market volatility.
 - Whilst using Deep Learning models there exists the black box problem, which refers to low transparency of decisions of the models and therefore low transparency for the users.
 
-## 5. Conclusion
+#### 5. Conclusion
 We are happy to introduce two working models which are strongly oriented towards our business case. 
 With the opportunity to obtain more data, there would be a possibility to overcome Overfitting and an overall stronger performance. 
+
+#### Appendix 
+Your Colab file contains two cells. The first cell creates a streamlit app using the %%writefile app.py command. To deploy the app, follow these steps:
+- Run the first cell to write the Streamlit app code to app.py.
+Run the second cell to start the deployment process. This cell ensures that all tunnels are properly set up.
+If you encounter any issues, such as connection errors or other types of errors, follow these steps:
+- Rerun the second cell. This will kill any existing tunnels and attempt to re-establish a new connection.
+- If the problem persists, rerun the second cell again until the connection stabilizes and the app runs smoothly.
